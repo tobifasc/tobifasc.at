@@ -22,9 +22,9 @@ export default function Index() {
         <h1 className="text-7xl font-bold">TOBIFASC.AT</h1>
       </div>
       <div className="mx-auto text-center p-10">
-        <p className="text-2xl">Hi, i am <span className="font-bold">Tobias</span>.</p>
-        <p className="text-2xl">By day i am a <span className="font-bold">fullstack developer</span>.</p>
-        <p className="text-2xl">What i'm most passionate about though is <span className="font-bold">backend</span> and <span className="font-bold">DevOps</span>.</p>
+        <p className="text-2xl">Hi, I am <span className="font-bold">Tobias</span>.</p>
+        <p className="text-2xl">By day I am a <span className="font-bold">fullstack developer</span>.</p>
+        <p className="text-2xl">What I&apos;m most passionate about though is <span className="font-bold">backend</span> and <span className="font-bold">DevOps</span>.</p>
         <p className="text-2xl mt-5">Take a look at this:</p>
       </div>
       <div className="grid grid-flow-col justify-center gap-3">
