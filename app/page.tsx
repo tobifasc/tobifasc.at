@@ -12,14 +12,14 @@ export const metadata = {
 export default function Page() {
   return (
       <div className="container mx-auto text-center p-20">
-        <h1 className="text-7xl font-bold">TOBIFASC.AT</h1>
+        <h1 className="text-4xl md:text-7xl font-bold">TOBIFASC.AT</h1>
         <div className="mx-auto text-center p-10">
           <p className="text-2xl">Hi, I am <span className="font-bold">Tobias</span>.</p>
           <p className="text-2xl">By day I am a <span className="font-bold">fullstack developer</span>.</p>
           <p className="text-2xl">What I&apos;m most passionate about though is <span className="font-bold">backend</span> and <span className="font-bold">DevOps</span>.</p>
           <p className="text-2xl mt-5">Take a look at this:</p>
         </div>
-        <div className="grid grid-flow-col justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-5">
           <Link href="https://edlin.tobifasc.at" className="block w-72 p-6 bg-gray-700 border border-gray-500 rounded-lg shadow hover:bg-gray-600">
             <h2 className="mb-2 text-2xl font-bold">F-Edlin</h2>
             <p>My take on a clone of the famous DOS editor...</p>
