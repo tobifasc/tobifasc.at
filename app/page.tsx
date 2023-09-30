@@ -17,7 +17,7 @@ export default function Page() {
           <p className="text-2xl">Hi, I am <span className="font-bold">Tobias</span>.</p>
           <p className="text-2xl">I am a <span className="font-bold">fullstack developer</span> driven by a passion for <span className="font-bold">robust</span>, <span className="font-bold">scalable</span> and <span className="font-bold">secure</span> <span className="font-bold">backends</span>.</p>
           <p className="text-2xl">My comfortzone is a terminal running <span className="font-bold">VIM</span>.</p>
-          <p className="text-2xl mt-3">Beyond the code I'm an avid runner, cook, music producer, ...</p>
+          <p className="text-2xl mt-3">Beyond the code I&apos;m an avid runner, cook, music producer, ...</p>
           <p className="text-2xl mt-5">Take a look at this:</p>
         </div>
         <div className="flex flex-wrap justify-center gap-5">
