@@ -8,7 +8,7 @@ export default function Dotfiles() {
         <h1 className="text-7xl font-bold">Dotfiles</h1>
       </div>
       <div className="mx-auto text-center p-10">
-        <p className="text-2xl">What.</p>
+        <p className="text-2xl">Under construction...</p>
       </div>
     </>
   )

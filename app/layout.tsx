@@ -21,9 +21,7 @@ export default function Layout({
               <div className="flex flex-wrap">
                 <HomeLink />
                 <a className="underline hover:underline-offset-4 w-30 p-10 md:ml-auto" href="https://github.com/tobifasc">Github</a>
-                <a className="underline hover:underline-offset-4 w-30 p-10">LinkedIn</a>
-                <a className="underline hover:underline-offset-4 w-30 p-10 mr-10">Anything else?</a>
-                <a className="underline hover:underline-offset-4 w-30 p-10 mr-10">No?</a>
+                <a className="underline hover:underline-offset-4 w-30 p-10" href="https://www.linkedin.com/in/tobias-fasching-496286125">LinkedIn</a>
               </div>
               {children}
             </div>
