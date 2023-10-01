@@ -10,6 +10,7 @@ export const metadata = {
 }
 
 export default function Page() {
+  
   return (
       <div className="container mx-auto text-center">
         <h1 className="text-4xl md:text-7xl font-bold">TOBIFASC.AT</h1>
@@ -17,10 +18,14 @@ export default function Page() {
           <p className="text-2xl">Hi, I am <span className="font-bold">Tobias</span>.</p>
           <p className="text-2xl">I am a <span className="font-bold">fullstack developer</span> driven by a passion for <span className="font-bold">robust</span>, <span className="font-bold">scalable</span> and <span className="font-bold">secure</span> <span className="font-bold">backends</span>.</p>
           <p className="text-2xl">My comfortzone is a terminal running <span className="font-bold">VIM</span>.</p>
-          <p className="text-2xl mt-3">Beyond the code I&apos;m an avid runner, cook, music producer, ...</p>
+          <p className="text-2xl mt-3">Beyond the code I&apos;m an avid runner, cook, musician, ...</p>
           <p className="text-2xl mt-5">Take a look at this:</p>
         </div>
         <div className="flex flex-wrap justify-center gap-5">
+          <Link href="/serversetup" className="block w-72 p-6 bg-gray-700 border border-gray-500 rounded-lg shadow hover:bg-gray-600">
+            <h2 className="mb-2 text-2xl font-bold">Server-Setup</h2>
+            <p>What is running on my server...</p>
+          </Link>
           <Link href="/edlin" className="block w-72 p-6 bg-gray-700 border border-gray-500 rounded-lg shadow hover:bg-gray-600">
             <h2 className="mb-2 text-2xl font-bold">F-Edlin</h2>
             <p>My take on a clone of the famous DOS editor...</p>
@@ -28,10 +33,6 @@ export default function Page() {
           <Link href="/dotfiles" className="block w-72 p-6 bg-gray-700 border border-gray-500 rounded-lg shadow hover:bg-gray-600">
             <h2 className="mb-2 text-2xl font-bold">Dotfiles</h2>
             <p>Some insight into my PC setup...</p>
-          </Link>
-          <Link href="/serversetup" className="block w-72 p-6 bg-gray-700 border border-gray-500 rounded-lg shadow hover:bg-gray-600">
-            <h2 className="mb-2 text-2xl font-bold">Server-Setup</h2>
-            <p>What is running on my server...</p>
           </Link>
         </div>
       </div>

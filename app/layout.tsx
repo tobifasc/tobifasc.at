@@ -10,7 +10,7 @@ export const metadata = {
 }
 
 export default function Layout({
-    children
+  children
   }: {
       children: React.ReactNode
     }) {
