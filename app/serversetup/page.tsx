@@ -99,7 +99,7 @@ export default function Dotfiles() {
       <div className="container mx-auto text-center p-10">
         <h1 className="text-4xl md:text-7xl font-bold">Server-Setup</h1>
       </div>
-      <div className="lg:mx-20 xl:mx-80 p-10">
+      <div className="lg:mx-20 xl:mx-80 p-10 bg-stone-950/90">
         <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={getMarkdownText()}></div>
       </div>
     </>
