@@ -12,11 +12,6 @@ export default function SpaceShip() {
     const intervalRef = useRef(0);
     const [shipSize, setShipSize] = useState(30);
 
-    let newTop = 0;
-    let newLeft = 0;
-    let radAngle = 0;
-    let degAngle = 0;
-
 
     useEffect(() => {
         function calcNewTarget() {
@@ -27,11 +22,11 @@ export default function SpaceShip() {
                 setShipSize((newShipSize > 50) ? 50 : newShipSize);
                 console.log("shipsize: " + shipSize)
             }
-            newTop = Math.floor(Math.random() * (height - shipSize));
-            newLeft = Math.floor(Math.random() * (width - shipSize));
-            radAngle = Math.atan2(newTop - top, newLeft - left);
+            let newTop = Math.floor(Math.random() * (height - shipSize));
+            let newLeft = Math.floor(Math.random() * (width - shipSize));
+            let radAngle = Math.atan2(newTop - top, newLeft - left);
             //degAngle = (radAngle > 0 ? radAngle: (2*Math.PI + radAngle)) * 360 / (2*Math.PI);
-            degAngle = (2 * Math.PI + radAngle) * 360 / (2 * Math.PI);
+            let degAngle = (2 * Math.PI + radAngle) * 360 / (2 * Math.PI);
             degAngle += 90;
 
             setAngle(degAngle);
@@ -39,13 +34,14 @@ export default function SpaceShip() {
             setLeft(newLeft);
         }
         // execute calcNewTarget immediately once and then every 4,5 seconds
+        // unsure if this is the right way to do this...
         if (intervalRef.current === 0) {
             calcNewTarget();
         }
         const interval = setInterval(calcNewTarget, 4500);
-        intervalRef.current = interval;
+        intervalRef.current = 1;
 
-        return () => { clearInterval(intervalRef.current); };
+        return () => { clearInterval(interval); };
     }, [top, left, angle, shipSize, height, width]);
 
     return (
