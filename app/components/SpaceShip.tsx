@@ -25,7 +25,6 @@ export default function SpaceShip() {
             let newTop = Math.floor(Math.random() * (height - shipSize));
             let newLeft = Math.floor(Math.random() * (width - shipSize));
             let radAngle = Math.atan2(newTop - top, newLeft - left);
-            //degAngle = (radAngle > 0 ? radAngle: (2*Math.PI + radAngle)) * 360 / (2*Math.PI);
             let degAngle = (2 * Math.PI + radAngle) * 360 / (2 * Math.PI);
             degAngle += 90;
 
