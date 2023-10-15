@@ -1,6 +1,6 @@
 import './styles/globals.css';
 import { Inter } from 'next/font/google';
-import HomeLink from './components/HomeLink';
+import NavBar from './components/NavBar';
 import SpaceShip from './components/SpaceShip';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -30,11 +30,7 @@ export default function Layout({
             <div className="min-h-screen pb-10">
               <div style={{boxShadow: getStarShadows(), width: "1px", height: "1px"}} />
               <div style={{boxShadow: getStarShadows(), width: "2px", height: "2px"}} />
-              <div className="flex flex-wrap">
-                <HomeLink />
-                <a className="underline hover:underline-offset-4 w-30 p-10 md:ml-auto" href="https://github.com/tobifasc">Github</a>
-                <a className="underline hover:underline-offset-4 w-30 p-10" href="https://www.linkedin.com/in/tobias-fasching-496286125">LinkedIn</a>
-              </div>
+              <NavBar />
               {children}
             </div>
         </body>
