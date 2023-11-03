@@ -20,7 +20,6 @@ export default function SpaceShip() {
             else {
                 let newShipSize = (height + width) / 40;
                 setShipSize((newShipSize > 50) ? 50 : newShipSize);
-                console.log("shipsize: " + shipSize)
             }
             let newTop = Math.floor(Math.random() * (height - shipSize));
             let newLeft = Math.floor(Math.random() * (width - shipSize));

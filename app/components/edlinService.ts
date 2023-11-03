@@ -3,8 +3,10 @@ import EdFile from './types/edfile'
 export default class EdlinService {
   private edMode = 'CLOSED';
   private file: EdFile = new EdFile();
+  private pushToBuffer: (a: string) => void;
+  private setPrompt: (a: string) => void;
   
-  constructor(pushToBuffer, setPrompt) {
+  constructor(pushToBuffer: (a: string) => void, setPrompt: (a: string) => void) {
     this.pushToBuffer = pushToBuffer;
     this.setPrompt = setPrompt;
   }
@@ -13,7 +15,7 @@ export default class EdlinService {
     return this.edMode != 'CLOSED';
   }
 
-  start(fileName) {
+  start(fileName: string) {
     this.pushToBuffer("fedlin 0.1, copyright (c) 2023 Tobias Fasching")
     this.pushToBuffer("This program comes with ABSOLUTELY NO WARRANTY.")
     this.pushToBuffer(" ");
@@ -22,7 +24,7 @@ export default class EdlinService {
     this.edMode = "OPEN";
   }
   
-  exec(cmd: String) {
+  exec(cmd: string) {
     if (this.edMode == "OPEN") {
       this.pushToBuffer("*" + cmd);
       const found = cmd.match(/^(\d*)(["a"|"l"|"q"]?)$/i);
@@ -37,7 +39,7 @@ export default class EdlinService {
           currLinePointer = (+found[1] - 1);
           this.file.setLinePointer(currLinePointer);
         }
-        this.file.lines.forEach((line, i) => {
+        this.file.getLines().forEach((line, i) => {
           this.pushToBuffer((i+1) + (i == currLinePointer ? ":*" : ": ") + line);
         });
       } else if (found[2].toLowerCase() == "q") { // quit ed
@@ -47,7 +49,7 @@ export default class EdlinService {
       } else if (found[2] == "" && found[1] != "") { // edit line
         currLinePointer = (+found[1] - 1);
         this.file.setLinePointer(currLinePointer);
-        this.pushToBuffer((currLinePointer+1) + ":*" + file[currLinePointer]);
+        this.pushToBuffer((currLinePointer+1) + ":*" + this.file.getLine(currLinePointer));
         this.setPrompt((currLinePointer+1) + ":");
         this.edMode = "EDITLINE";
       }
@@ -57,11 +59,11 @@ export default class EdlinService {
         this.setPrompt("*");
         this.edMode = "OPEN";
       } else {
-        this.file.lines.push(cmd);
-        this.file.setLinePointer(this.file.lines.length - 1);
+        this.file.addLine(cmd);
+        this.file.setLinePointer(this.file.getLineCount() - 1);
       }
     } else if (this.edMode == "EDITLINE") {
-      this.file[this.file.getLinePointer()] = cmd;
+      this.file.setLine(this.file.getLinePointer(), cmd);
       this.pushToBuffer((this.file.getLinePointer()+1) + ":" + cmd);
       this.setPrompt("*");
       this.edMode = "OPEN";

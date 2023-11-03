@@ -2,8 +2,16 @@
 import { useEffect, useState, useRef } from 'react';
 import EdlinService from './edlinService';
 
+interface KeyboardEvent {
+  key: string;
+  code: string;
+}
+interface ITerm {
+  cmdLine: string;
+  buffer: string[];
+}
 export default function Terminal() {
-  const [term, setTerm] = useState({cmdLine: "", buffer: []});
+  const [term, setTerm] = useState<ITerm>({cmdLine: "", buffer: []});
   const [prompt, setPrompt] = useState("> ");
   const [cursorStyle, setCursorStyle] = useState('');
   const [file, setFile] = useState([]);
@@ -19,7 +27,7 @@ export default function Terminal() {
     };
   }, []);
 
-  function pushToBuffer(line: String) {
+  function pushToBuffer(line: string) {
     setTerm((prev) => {
       prev.buffer.push(line);
       return {cmdLine: "", buffer: prev.buffer}
@@ -67,7 +75,7 @@ export default function Terminal() {
 
   
   return (
-      <div onKeyDown={keyDownHandler} tabIndex="0" className="flex-1 w-full max-w-5xl font-mono bg-black p-8 text-white">
+      <div onKeyDown={keyDownHandler} tabIndex={0} className="flex-1 w-full max-w-5xl font-mono bg-black p-8 text-white">
           {term.buffer.slice(-10).map((row, i) => <p key={i} className="whitespace-pre">{row}</p>)}
           <p className="whitespace-pre">{prompt}<span>{term.cmdLine}</span><span className={cursorStyle}>_</span></p>
       </div>
