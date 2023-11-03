@@ -36,7 +36,7 @@ export default function Page() {
             <h2 className="mb-2 text-2xl font-bold">Server-Setup</h2>
             <p>What is running on my server...</p>
           </Link>
-          <Link href="/edlin" className="block w-72 p-6 bg-gray-700 border border-gray-500 rounded-lg shadow hover:bg-gray-600 z-10">
+          <Link href="/f-edlin" className="block w-72 p-6 bg-gray-700 border border-gray-500 rounded-lg shadow hover:bg-gray-600 z-10">
             <h2 className="mb-2 text-2xl font-bold">F-Edlin</h2>
             <p>My take on a clone of the famous DOS editor...</p>
           </Link>
