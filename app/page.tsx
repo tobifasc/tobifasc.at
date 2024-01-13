@@ -40,9 +40,9 @@ export default function Page() {
             <h2 className="mb-2 text-2xl font-bold">F-Edlin</h2>
             <p>My take on a clone of the famous DOS editor...</p>
           </Link>
-          <Link href="/dotfiles" className="block w-72 p-6 bg-gray-700 border border-gray-500 rounded-lg shadow hover:bg-gray-600 z-10">
-            <h2 className="mb-2 text-2xl font-bold">Dotfiles</h2>
-            <p>Some insight into my PC setup...</p>
+          <Link href="/nvim-setup" className="block w-72 p-6 bg-gray-700 border border-gray-500 rounded-lg shadow hover:bg-gray-600 z-10">
+            <h2 className="mb-2 text-2xl font-bold">Neovim-Setup</h2>
+            <p>How to get started using NVim...</p>
           </Link>
         </div>
       </div>
